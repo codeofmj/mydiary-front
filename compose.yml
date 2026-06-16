@@ -1,0 +1,12 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-diary-frontend
+    ports:
+      - "80:80"
+    environment:
+      BACKEND_HOST: ${BACKEND_HOST:-10.1.2.6}
+      FRONTEND_SERVER_NAME: ${FRONTEND_SERVER_NAME}
+    restart: unless-stopped
