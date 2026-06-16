@@ -9,9 +9,10 @@ server {
         try_files $uri /index.html;
     }
 
+    # 로드밸런서 분산 확인용 경로 설정
     location /frontend-info {
         default_type application/json;
-        return 200 '{"type":"frontend","hostname":"$hostname"}';
+        return 200 '{"type":"frontend","hostname":"${FRONTEND_SERVER_NAME}"}';
     }
 
     location /api/ {
