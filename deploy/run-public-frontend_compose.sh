@@ -9,8 +9,8 @@ cd "$(dirname "$0")/.."
 export BACKEND_HOST
 export FRONTEND_SERVER_NAME
 
-docker compose down
-docker compose up -d --build
+sudo docker compose down
+sudo docker compose up -d --build
 
 echo "Frontend container is running."
 echo "BACKEND_HOST=$BACKEND_HOST"
